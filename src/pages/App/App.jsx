@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import WatchList from '../../pages/WatchList/WatchList';
 import NavBar from '../../components/NavBar/NavBar';
 import Categories from '../Categories/Categories';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -19,6 +20,8 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/watchlist" element={<WatchList />} />
               <Route path="/categories" element={<Categories />} />
+              <Route path="/hulutopten" element={<HuloTopTen />} />
+
             </Routes>
           </>
           :

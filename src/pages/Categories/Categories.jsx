@@ -1,4 +1,28 @@
+import { useState, useEffect } from 'react';
+import * as contentsAPI from '../../utilities/contents-api'
+
+
+
 export default function Categories() {
+  const [sources, setSources] = useState([]);
+
+useEffect(function() {
+  async function getAllSources() {
+    const allSources = await contentsAPI.getSources();
+    setSources(allSources);
+  }
+  getAllSources();
+}, []);
+
+  const AllSources = sources.map((source, idx) => (
+    <div key={idx}>
+
+    <h1 key={idx
+    }> {source.name}</h1>
+    <img src={source.logo_100px} alt="{source.name} Logo" />
+    </div>
+  )) 
+
   return (
    
    <>
@@ -11,9 +35,9 @@ export default function Categories() {
         </ul>
     </div>
 
-    <div className="shows">
+    <div className="shows"> 
       <ul>
-        <li>TV Shows</li>
+        <li>{AllSources}</li>
       </ul>
     </div>
    </>
