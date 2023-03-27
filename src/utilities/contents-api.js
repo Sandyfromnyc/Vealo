@@ -16,7 +16,8 @@ export async function getHuluTopTen(){
 }
 
 export async function getSearch(searchData) {
-  const searchTitle = await sendRequest(`${BASE_URL}/search`, 'GET', searchData)
+  const searchTitle = await sendRequest(`${BASE_URL}/search?searchItem=${searchData}`)
+  console.log(searchTitle);
   return searchTitle
 }
 

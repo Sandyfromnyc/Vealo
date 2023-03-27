@@ -18,6 +18,8 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/hulutopten">Hulu Top Ten</Link>
       &nbsp; | &nbsp;
+      <Link to="/search">Search Titles</Link>
+      &nbsp; | &nbsp;
       <Link to="/watchlist">Add to Watchlist</Link>
       &nbsp;&nbsp;
       <span>Vealo 👍 {user.name} or 👎 No </span>

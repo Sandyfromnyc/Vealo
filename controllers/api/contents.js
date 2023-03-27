@@ -26,8 +26,11 @@ async function huluTopTen(req, res) {
 async function search(req, res) {
     const searchItem = req.query.searchItem
     if (!search) return null
+    const url = `${BASE_URL}/autocomplete-search/?apiKey=${API_KEY}&search_value=${searchItem}}&search_type=2`
     const response = await fetch(`${BASE_URL}/autocomplete-search/?apiKey=${API_KEY}&search_value=${searchItem}}&search_type=2`)
+    console.log(response, 'this is the response')
     const searchData = await response.json()
+    console.log(searchData.results)
     res.json(searchData.results);
 }
 

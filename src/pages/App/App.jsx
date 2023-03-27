@@ -7,8 +7,8 @@ import WatchList from '../../pages/WatchList/WatchList';
 import NavBar from '../../components/NavBar/NavBar';
 import Categories from '../Categories/Categories';
 import HuluTopTen from '../HuluTopTen/HuluTopTen';
-import Search from '../Search/Search';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchPage from '../SearchPage/SearchPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -23,7 +23,7 @@ export default function App() {
               <Route path="/watchlist" element={<WatchList />} />
               <Route path="/categories" element={<Categories />} />
               <Route path="/hulutopten" element={<HuluTopTen />} />
-              <Route path="/search" element={<Search />} />
+              <Route path="/search" element={<SearchPage />} />
 
 
             </Routes>
