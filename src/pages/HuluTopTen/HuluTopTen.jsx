@@ -13,9 +13,22 @@ useEffect(function() {
   showHuluTopTen();
 }, []); 
 
-const hulutopmap = hulutopten.map(())
+const hulutopmap = hulutopten.map((huluitem, idx) => (
+  <div key={idx}>
+    <h1>
+      {huluitem.title}
+      {huluitem.year}
+      {huluitem.type}
+    </h1>
+
+  </div>
+))
 
   return (
-
+     <ul>
+      <li>
+        {hulutopmap}
+      </li>
+     </ul>
   )
 }

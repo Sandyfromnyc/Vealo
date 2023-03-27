@@ -6,6 +6,8 @@ import AuthPage from '../AuthPage/AuthPage';
 import WatchList from '../../pages/WatchList/WatchList';
 import NavBar from '../../components/NavBar/NavBar';
 import Categories from '../Categories/Categories';
+import HuluTopTen from '../HuluTopTen/HuluTopTen';
+import Search from '../Search/Search';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App() {
@@ -20,7 +22,9 @@ export default function App() {
               {/* Route components in here */}
               <Route path="/watchlist" element={<WatchList />} />
               <Route path="/categories" element={<Categories />} />
-              <Route path="/hulutopten" element={<HuloTopTen />} />
+              <Route path="/hulutopten" element={<HuluTopTen />} />
+              <Route path="/search" element={<Search />} />
+
 
             </Routes>
           </>

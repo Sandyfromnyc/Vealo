@@ -5,7 +5,8 @@ const API_KEY = process.env.API_KEY;
 
 module.exports = {
     sources,
-    huluTopTen
+    huluTopTen,
+    search
 }
 
 
@@ -19,8 +20,19 @@ async function sources(req, res)  {
 async function huluTopTen(req, res) {
     const response = await fetch(`${BASE_URL}/list-titles/?apiKey=${API_KEY}&source_ids=157&sort_by=popularity_desc&limit=10`)
     const huluTopTenData = await response.json()
-    res.json(huluTopTenData);
+    res.json(huluTopTenData.titles);
 }
+
+async function search(req, res) {
+    const searchItem = req.query.searchItem
+    if (!search) return null
+    const response = await fetch(`${BASE_URL}/autocomplete-search/?apiKey=${API_KEY}&search_value=${searchItem}}&search_type=2`)
+    const searchData = await response.json()
+    res.json(searchData.results);
+}
+
+
+
 
 
 
