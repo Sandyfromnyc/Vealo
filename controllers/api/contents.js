@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 const BASE_URL = process.env.BASE_URL;
 const API_KEY = process.env.API_KEY;
-const Content = require('../model/content');
+const Content = require('../../models/content');
 
 module.exports = {
     sources,

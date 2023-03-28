@@ -9,6 +9,7 @@ import Categories from '../Categories/Categories';
 import HuluTopTen from '../HuluTopTen/HuluTopTen';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchPage from '../SearchPage/SearchPage';
+import ContentDetailPage from '../ContentDetailPage/ContentDetalPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
