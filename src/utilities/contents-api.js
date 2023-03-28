@@ -21,3 +21,7 @@ export async function getSearch(searchData) {
   return searchTitle
 }
 
+export async function getContentDetails(id){
+  const contentData = await sendRequest(`${BASE_URL}/${id}`)
+  return contentData
+}

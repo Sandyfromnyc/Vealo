@@ -24,6 +24,8 @@ export default function App() {
               <Route path="/categories" element={<Categories />} />
               <Route path="/hulutopten" element={<HuluTopTen />} />
               <Route path="/search" element={<SearchPage />} />
+              <Route path="/content/:id" element={<ContentDetailPage />} />
+              
 
 
             </Routes>

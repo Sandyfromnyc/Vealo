@@ -12,7 +12,8 @@ router.get('/hulutopten', contentsCtrl.huluTopTen)
 // Get /api/contents/search
 router.get('/search', contentsCtrl.search)
 
-
+// GET /api/contents/:id
+router.get('/:id', contentsCtrl.show)
 
 
 
