@@ -10,7 +10,7 @@ export default function ContentSearchCard({result, idx}) {
         <li>
           {result.name}
         </li>
-        <img src={result.img_url} alt={result.name} poster />
+        <img src={result.image_url} alt={result.name} poster />
       </ul>
 
 

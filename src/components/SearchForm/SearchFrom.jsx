@@ -17,7 +17,7 @@ export default function SearchForm({handleSearch}) {
 
     <form onSubmit={handleSubmit}> 
     <input type="text"
-    placeholder="Search Title"
+    placeholder="Hey, Search a Title"
     value={searchItem}
     onChange={handleChange}
     />
