@@ -3,18 +3,24 @@ import { useState, useEffect } from "react";
 import  * as contentAPI from '../../utilities/contents-api'
 
 
+
 export default function ContentDetailPage() {
-   const [contentDetails, setContentDetails] = useState([]);
+   const [contentDetails, setContentDetails] = useState(null);
    const {id} = useParams();
 
 useEffect(function() {
   async function getContentDetails() {
     const allContentDetails = await contentAPI.getContentDetails(id)
-    setContentDetails(allContentDetails);
+    // const contentDetailsArray = [allContentDetails] 
+
+   
+    setContentDetails([allContentDetails])
   }
   getContentDetails();
-}, []);
+}, [id]);
 
+  if (!contentDetails) return null
+  console.log(contentDetails)
   const AllContentDetails = contentDetails.map((contentDetail, idx) => (
     <div key={idx}>
      <ul>
@@ -22,19 +28,20 @@ useEffect(function() {
       <li> {contentDetail.type} </li>
       <li> {contentDetail.id} </li>
       <li> {contentDetail.year} </li>
-      <li> {contentDetail.genre_name} </li>
+      <li> {contentDetail.genre_names} </li>
       <li> {contentDetail.user_rating} </li>
       <li> {contentDetail.us_rating} </li>
-      <li> {contentDetail.poster} </li>
+      <li> 
+       <img src={contentDetail.poster} alt={contentDetail.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} />   </li>
+      <li>{contentDetail.plot_overview}</li>
      </ul>
 
     </div>
 
   ))
-  if (!contentDetails) return null
   return (
     <>
-    <h1>Content Details</h1>
+    <h1>Details</h1>
     <div className="contentDetails">
       <ul>
         <li>{AllContentDetails}</li>

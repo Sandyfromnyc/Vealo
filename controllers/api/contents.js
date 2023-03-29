@@ -43,7 +43,8 @@ async function show(req, res) {
         poster: content.poster,
         genre_names: content.genre_names,
         user_rating: content.user_rating,
-        us_rating: content.us_rating
+        us_rating: content.us_rating,
+        plot_overview: content.plot_overview
     };
         content = await Content.create(newContent);
     }

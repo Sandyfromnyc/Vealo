@@ -52,9 +52,11 @@ const contentSchema = new Schema({
   },
   us_rating: {
     type: String,
-    required: true
   },
-  
+  plot_overview: {
+    type: String
+  },
+
 
   reviews: [reviewSchema]
 
