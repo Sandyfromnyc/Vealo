@@ -5,10 +5,11 @@ import  * as contentAPI from '../../utilities/contents-api'
 
 export default function ContentDetailPage() {
    const [contentDetails, setContentDetails] = useState([]);
+   const {id} = useParams();
 
 useEffect(function() {
   async function getContentDetails() {
-    const allContentDetails = await contentAPI.getContentDetails()
+    const allContentDetails = await contentAPI.getContentDetails(id)
     setContentDetails(allContentDetails);
   }
   getContentDetails();
@@ -30,7 +31,7 @@ useEffect(function() {
     </div>
 
   ))
-
+  if (!contentDetails) return null
   return (
     <>
     <h1>Content Details</h1>

@@ -48,6 +48,7 @@ async function show(req, res) {
         content = await Content.create(newContent);
     }
     res.json(content);
+    
 }
 
 
