@@ -14,6 +14,11 @@ export async function getHuluTopTen(){
   console.log(topTenSourceData, 'this is the hulutopten')
   return topTenSourceData 
 }
+export async function getTrending(){
+  const trendingData = await sendRequest(`${BASE_URL}/trending`)
+  console.log(trendingData, 'this is the trending')
+  return trendingData 
+}
 
 export async function getSearch(searchData) {
   const searchTitle = await sendRequest(`${BASE_URL}/search?searchItem=${searchData}`)

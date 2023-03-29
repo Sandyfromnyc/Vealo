@@ -16,7 +16,7 @@ export default function NavBar({ user, setUser }) {
     <nav>
       <Link to="/categories">Categories</Link>
       &nbsp; | &nbsp;
-      <Link to="/hulutopten">Hulu Top Ten</Link>
+      <Link to="/trending">Trending</Link>
       &nbsp; | &nbsp;
       <Link to="/search">Search Titles</Link>
       &nbsp; | &nbsp;

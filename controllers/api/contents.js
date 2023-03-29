@@ -7,7 +7,8 @@ module.exports = {
     sources,
     huluTopTen,
     search,
-    show
+    show,
+    trending
 }
 
 async function sources(req, res)  { 
@@ -21,6 +22,14 @@ async function huluTopTen(req, res) {
     const huluTopTenData = await response.json()
     res.json(huluTopTenData.titles);
 }
+
+async function trending(req, res) {
+    const response = await fetch(`${BASE_URL}/list-titles/?apiKey=${API_KEY}&sort_by=popularity_desc&limit=15`)  
+    const trendingData = await response.json()
+    res.json(trendingData.titles);
+}
+
+
 
 async function search(req, res) {
     const searchItem = req.query.searchItem

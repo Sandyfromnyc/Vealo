@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 
-const reviewSchema = new Schema({
+const commentsSchema = new Schema({
   content: {
     type: String,
     required: true
@@ -58,7 +58,7 @@ const contentSchema = new Schema({
   },
 
 
-  reviews: [reviewSchema]
+  comments: [commentsSchema]
 
 });
 

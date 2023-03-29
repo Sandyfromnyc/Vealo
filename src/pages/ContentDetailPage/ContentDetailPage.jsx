@@ -1,12 +1,25 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import  * as contentAPI from '../../utilities/contents-api'
+import  * as contentAPI from '../../utilities/contents-api';
+import * as commentsAPI from '../../utilities/comments-api';
+import CommentForm from "../../components/CommentForm/CommentForm";
+import CommentCard from "../../components/CommentCard/CommentCard";
 
 
 
 export default function ContentDetailPage() {
    const [contentDetails, setContentDetails] = useState(null);
    const {id} = useParams();
+
+async function handleAddComment(comment) {
+  const newContentWComment = await commentsAPI.addComment(comment, contentDetails._id)
+  setContentDetails(newContentWComment)
+}
+
+async function handleDeleteComment(id) {
+  const updatedContent = await commentsAPI.deleteComment(id)
+  setContentDetails(updatedContent)
+}
 
 useEffect(function() {
   async function getContentDetails() {
@@ -18,6 +31,8 @@ useEffect(function() {
   }
   getContentDetails();
 }, [id]);
+
+
 
   if (!contentDetails) return null
   console.log(contentDetails)
@@ -31,6 +46,7 @@ useEffect(function() {
       <li> {contentDetail.genre_names} </li>
       <li> {contentDetail.user_rating} </li>
       <li> {contentDetail.us_rating} </li>
+      <li> {contentDetail.comments} We are missing YOU </li>
       <li> 
        <img src={contentDetail.poster} alt={contentDetail.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} />   </li>
       <li>{contentDetail.plot_overview}</li>
@@ -39,6 +55,7 @@ useEffect(function() {
     </div>
 
   ))
+  if (!contentDetails) return null
   return (
     <>
     <h1>Details</h1>
@@ -47,8 +64,9 @@ useEffect(function() {
         <li>{AllContentDetails}</li>
       </ul>
     </div>
+    <CommentForm handleAddComment={handleAddComment}  /> 
+    {/* <CommentCard handleDeleteComment={handleDeleteComment} comments={contentDetails.comments} /> */}
 
     </>
   )
-
 }

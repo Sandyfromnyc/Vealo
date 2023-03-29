@@ -27,11 +27,11 @@ useEffect(function() {
    
    <>
    
-    <h1>Categories</h1>
+    <h1>Streaming Sources</h1>
 
     <div className="movie">
         <ul>
-          <li> Movies </li>
+          <li> All of it here! </li>
         </ul>
     </div>
 
