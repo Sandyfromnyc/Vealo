@@ -25,8 +25,9 @@ export default function CommentForm({handleAddComment}) {
           <textarea 
           name='content' 
           placeholder='Add a comment'
-          onChange={handleChange}
           value={newComment.content} 
+          onChange={handleChange}
+          required
           />
           <label htmlFor="rating">Rating</label>
           <select name="rating" value={newComment.rating} onChange={handleChange}>

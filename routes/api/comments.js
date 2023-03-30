@@ -10,5 +10,8 @@ router.post('/contents/:id/comments', commentsCtrl.createComment)
 // DELETE /api/comments/:id
 router.delete('/comments/:id', commentsCtrl.deleteComment)
 
+// PUT /api/comments/:id
+
+
 module.exports = router;
 

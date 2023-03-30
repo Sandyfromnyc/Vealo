@@ -24,48 +24,37 @@ async function handleDeleteComment(id) {
 useEffect(function() {
   async function getContentDetails() {
     const allContentDetails = await contentAPI.getContentDetails(id)
-    // const contentDetailsArray = [allContentDetails] 
 
    
-    setContentDetails([allContentDetails])
+    setContentDetails(allContentDetails)
   }
   getContentDetails();
 }, [id]);
-
-
-
+ 
   if (!contentDetails) return null
-  console.log(contentDetails)
-  const AllContentDetails = contentDetails.map((contentDetail, idx) => (
-    <div key={idx}>
-     <ul>
-      <li> Title:  {contentDetail.title} </li>
-      <li> Type: {contentDetail.type} </li>
-      <li> ID: {contentDetail.id} </li>
-      <li> Year: {contentDetail.year} </li>
-      <li> Genre: {contentDetail.genre_names} </li>
-      <li> User Rating: {contentDetail.user_rating} </li>
-      <li> US Rating: {contentDetail.us_rating} </li>
-      <li> {contentDetail.comments} </li>
-      <li> 
-       <img src={contentDetail.poster} alt={contentDetail.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} />   </li>
-      <li>{contentDetail.plot_overview}</li>
-     </ul>
 
-    </div>
-
-  ))
-  if (!contentDetails) return null
   return (
     <>
     <h1>Details</h1>
     <div className="contentDetails" section>
-      <ul>
-        <li>{AllContentDetails}</li>
-      </ul>
+    <div>
+     <ul>
+      <li> Title:  {contentDetails.title} </li>
+      <li> Type: {contentDetails.type} </li>
+      <li> ID: {contentDetails.id} </li>
+      <li> Year: {contentDetails.year} </li>
+      <li> Genre: {contentDetails.genre_names} </li>
+      <li> User Rating: {contentDetails.user_rating} </li>
+      <li> US Rating: {contentDetails.us_rating} </li>
+      <li> 
+       <img src={contentDetails.poster} alt={contentDetails.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} />   </li>
+      <li>{contentDetails.plot_overview}</li>
+     </ul>
+
+    </div>
     </div>
     <CommentForm handleAddComment={handleAddComment}  /> 
-    {/* <CommentCard handleDeleteComment={handleDeleteComment} comments={contentDetails.comments} /> */}
+    <CommentCard handleDeleteComment={handleDeleteComment} comments={contentDetails.comments} />
 
     </>
   )
