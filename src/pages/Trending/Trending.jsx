@@ -23,12 +23,16 @@ async function handleDetail(id) {
 
 const trendingMap = trending.map((trendingitem, idx) => (
   <div key={idx}>
-    <h1>
-      {trendingitem.title}
-      {trendingitem.year}
-      {trendingitem.type}
-      <button onClick={() => handleDetail(trendingitem.id)}>Get Details </button>
-    </h1>
+  
+  <h1> See What's trending</h1>
+    <div section>
+      <ul>
+            {trendingitem.title}
+            {trendingitem.year}
+            {trendingitem.type}
+            <button onClick={() => handleDetail(trendingitem.id)}>Get Details </button>
+      </ul>
+    </div>
 
   </div>
 ))

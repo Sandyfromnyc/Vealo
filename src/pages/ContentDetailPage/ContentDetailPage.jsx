@@ -39,14 +39,14 @@ useEffect(function() {
   const AllContentDetails = contentDetails.map((contentDetail, idx) => (
     <div key={idx}>
      <ul>
-      <li> {contentDetail.title} </li>
-      <li> {contentDetail.type} </li>
-      <li> {contentDetail.id} </li>
-      <li> {contentDetail.year} </li>
-      <li> {contentDetail.genre_names} </li>
-      <li> {contentDetail.user_rating} </li>
-      <li> {contentDetail.us_rating} </li>
-      <li> {contentDetail.comments} We are missing YOU </li>
+      <li> Title:  {contentDetail.title} </li>
+      <li> Type: {contentDetail.type} </li>
+      <li> ID: {contentDetail.id} </li>
+      <li> Year: {contentDetail.year} </li>
+      <li> Genre: {contentDetail.genre_names} </li>
+      <li> User Rating: {contentDetail.user_rating} </li>
+      <li> US Rating: {contentDetail.us_rating} </li>
+      <li> {contentDetail.comments} </li>
       <li> 
        <img src={contentDetail.poster} alt={contentDetail.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} />   </li>
       <li>{contentDetail.plot_overview}</li>
@@ -59,7 +59,7 @@ useEffect(function() {
   return (
     <>
     <h1>Details</h1>
-    <div className="contentDetails">
+    <div className="contentDetails" section>
       <ul>
         <li>{AllContentDetails}</li>
       </ul>
