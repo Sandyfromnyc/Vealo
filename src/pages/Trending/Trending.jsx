@@ -24,7 +24,6 @@ async function handleDetail(id) {
 const trendingMap = trending.map((trendingitem, idx) => (
   <div key={idx}>
   
-  <h1> See What's trending</h1>
     <div section>
       <ul>
             {trendingitem.title}
@@ -38,10 +37,13 @@ const trendingMap = trending.map((trendingitem, idx) => (
 ))
 
   return (
+    <>
+  <h1> See What's trending</h1>
      <ul>
       <li>
         {trendingMap}
       </li>
      </ul>
+    </>
   )
 }
