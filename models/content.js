@@ -48,11 +48,12 @@ const contentSchema = new Schema({
   }],
   user_rating: {
     type: Number,
-    required: true
   },
+
   us_rating: {
     type: String,
   },
+  
   plot_overview: {
     type: String
   },

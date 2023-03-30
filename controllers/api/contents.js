@@ -41,7 +41,7 @@ async function search(req, res) {
 }
 
 async function show(req, res) {
-    let content = await Content.findOne({id: req.params.id})
+    let content = await Content.findOne({id: req.params.id}).populate('comments.user', 'name')
     if (!content) {
         content = await fetch(`${BASE_URL}/title/${req.params.id}/details/?apiKey=${API_KEY}`).then((response) => response.json())
     const newContent = {
@@ -56,6 +56,8 @@ async function show(req, res) {
         plot_overview: content.plot_overview
     };
         content = await Content.create(newContent);
+        
+        await content.populate('comments.user', 'name')
     }
     res.json(content);
     

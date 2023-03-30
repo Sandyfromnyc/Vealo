@@ -11,3 +11,12 @@ export async function deleteComment(id) {
   return deleteCommentRequest
 }
 
+export async function editComment(id){
+  const editCommentRequest = await sendRequest(`/api/comments/${id}`, 'GET')
+  return editCommentRequest
+}
+
+export async function updateComment(id) {
+  const updateCommentRequest = await sendRequest(`/api/comments/${id}`, 'PUT')
+  return updateCommentRequest
+}
