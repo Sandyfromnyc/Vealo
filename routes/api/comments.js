@@ -14,7 +14,7 @@ router.delete('/comments/:id', commentsCtrl.deleteComment)
 // router.get('/comment/:id/edit', commentsCtrl.editComment)
 
 // PUT /api/comments/:id
-router.put('/comments/:id', commentsCtrl.updateComment)
+// router.put('/comments/:id', commentsCtrl.updateComment)
 
 
 module.exports = router;
