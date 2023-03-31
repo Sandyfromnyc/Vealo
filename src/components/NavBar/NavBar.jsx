@@ -22,6 +22,7 @@ export default function NavBar({ user, setUser }) {
         <Link to="/search">Search Titles</Link>
         &nbsp; | &nbsp;
         <Link to="/watchlist">Watchlist</Link>
+        <Nav.Link href="/watchlist">My Comments</Nav.Link>
         &nbsp;&nbsp;
         <span>Vealo 👍 {user.name} or 👎 No </span>
         &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>

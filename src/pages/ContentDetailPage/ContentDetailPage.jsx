@@ -8,7 +8,7 @@ import AuthPage from "../AuthPage/AuthPage";
 
 
 
-export default function ContentDetailPage() {
+export default function ContentDetailPage({user}) {
    const [contentDetails, setContentDetails] = useState(null);
    const {id} = useParams();
 
@@ -57,7 +57,7 @@ useEffect(function() {
         
 
       <CommentForm handleAddComment={handleAddComment}  /> 
-      <CommentCard handleDeleteComment={handleDeleteComment} comments={contentDetails.comments} />
+      <CommentCard handleDeleteComment={handleDeleteComment} comments={contentDetails.comments} user={user} />
     </>
 
   );

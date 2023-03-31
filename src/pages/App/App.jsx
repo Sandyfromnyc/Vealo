@@ -25,9 +25,7 @@ export default function App() {
               <Route path="/categories" element={<Categories />} />
               <Route path="/trending" element={<Trending />} />
               <Route path="/search" element={<SearchPage />} />
-              <Route path="/content/:id" element={<ContentDetailPage />} />
-              
-
+              <Route path="/content/:id" element={<ContentDetailPage  user={user}/>} />
 
             </Routes>
           </>

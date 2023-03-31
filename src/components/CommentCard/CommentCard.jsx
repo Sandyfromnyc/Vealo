@@ -3,7 +3,7 @@
 export default function CommentCard({comments, user, handleDeleteComment}) {
  const commentsMap = comments.map((comment, idx,) => (
         <>
-          <div key={user}>
+          <div>
             <div className="commentUser" >
 
               <p className="userName">Name: {comment.user.name}</p>
@@ -11,13 +11,13 @@ export default function CommentCard({comments, user, handleDeleteComment}) {
               <p>{comment.content}</p>
               <p>Created on: {new Date().toLocaleString()}</p>
               <p>Rating: {comment.rating}</p>
-                {user === comment.user._id ?
-              <>
-                  <button onClick={() => handleDeleteComment(comment._id)}> Delete </button>
-              </>
+                {user._id === comment.user._id ?
+          
+                <button onClick={() => handleDeleteComment(comment._id)}> Delete </button>
+         
               :
-              null
-              }
+              null 
+                }
           </div>
         </>
     )) 

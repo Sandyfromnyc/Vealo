@@ -4,6 +4,7 @@ const User = require('../../models/user');
 module.exports = {
   createComment,
   deleteComment,
+  editComment,
   updateComment
 }
 
@@ -28,10 +29,23 @@ async function deleteComment(req, res) {
   res.json(content)
 }
 
+async function editComment(req, res) {
+  const content = await Content.findOne({'comments._id': req.params.id, 'comments.user' : req.user._id});
+  const comment = content.comments.id(req.params.id);
+  res.json('comments/edit', { comment });
+}
+
 
 async function updateComment(req, res) {
   const content = await Content.finddById({'comments._id' : req.params.id, 'comments.user' : req.user._id});
-  content.comments.update(req,params.id);
-  await content.save();
-  res.json(content)
+  const commentId = Content.comments.id(req.params.id);
+  if (!commentId.userId.equals(req.user._id)) return res.redirect(`/contentDetailsPage`);
+  commentId.text = req.body.text
+  try {
+    await content.save();
+  } catch (e) {
+    console.log(e.message);
+  }
+  res.json(content);
 }
+
