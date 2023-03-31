@@ -13,18 +13,20 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
-      <Link to="/categories">Categories</Link>
-      &nbsp; | &nbsp;
-      <Link to="/trending">Trending</Link>
-      &nbsp; | &nbsp;
-      <Link to="/search">Search Titles</Link>
-      &nbsp; | &nbsp;
-      <Link to="/watchlist">Add to Watchlist</Link>
-      &nbsp;&nbsp;
-      <span>Vealo 👍 {user.name} or 👎 No </span>
-      &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-    </nav>
+    <div>
+      <nav>
+        <Link to="/categories">Streaming Sources</Link>
+        &nbsp; | &nbsp;
+        <Link to="/trending">Trending</Link>
+        &nbsp; | &nbsp;
+        <Link to="/search">Search Titles</Link>
+        &nbsp; | &nbsp;
+        <Link to="/watchlist">Watchlist</Link>
+        &nbsp;&nbsp;
+        <span>Vealo 👍 {user.name} or 👎 No </span>
+        &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+      </nav>
+    </div>
   );
 }
 

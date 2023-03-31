@@ -1,24 +1,35 @@
 
 
-export default function CommentCard({comments, handleDeleteComment}) {
- const commentsMap = comments.map((comment, idx) => (
-   <>
-   <p>{comment.user.name}</p>
-    <p>{comment.content}</p>
-    <p>{comment.rating}</p>
-
-  <button onClick={() => handleDeleteComment(comment._id)}> Delete </button>
-   </>
-)) 
-
-  return (
+export default function CommentCard({comments, user, handleDeleteComment}) {
+ const commentsMap = comments.map((comment, idx,) => (
         <>
-        <div>
-          
-      <h2>All Comments</h2>
-     {commentsMap}
-        </div>
+          <div key={user}>
+            <div className="commentUser" >
 
+              <p className="userName">Name: {comment.user.name}</p>
+            </div>
+              <p>{comment.content}</p>
+              <p>Created on: {new Date().toLocaleString()}</p>
+              <p>Rating: {comment.rating}</p>
+                {user === comment.user._id ?
+              <>
+                  <button onClick={() => handleDeleteComment(comment._id)}> Delete </button>
+              </>
+              :
+              null
+              }
+          </div>
         </>
-  )
+    )) 
+
+    return (
+          <>
+          <div>
+            
+            <h2>All Comments</h2>
+          {commentsMap}
+          </div>
+
+          </>
+    )
 }

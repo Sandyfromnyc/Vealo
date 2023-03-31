@@ -8,6 +8,8 @@ export default function WatchList() {
   return (
     <>
       <h1>Watch List</h1>
+
+      
       <button onClick={handleCheckToken}>Do I need this button?</button>
     </>
   );

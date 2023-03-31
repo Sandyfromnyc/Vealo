@@ -25,12 +25,20 @@ const trendingMap = trending.map((trendingitem, idx) => (
   <div key={idx}>
   
     <div section>
-      <ul>
+      <div>
+        <ul>
+          <li>
+
             {trendingitem.title}
             {trendingitem.year}
             {trendingitem.type}
+          </li>
+          <li>
+          <img src={trendingitem.image_url} alt={trendingitem.name} poster/>  
+          </li>
             <button onClick={() => handleDetail(trendingitem.id)}>Get Details </button>
-      </ul>
+        </ul>
+      </div>
     </div>
 
   </div>
