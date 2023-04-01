@@ -6,6 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
+
 export default function NavBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
@@ -13,11 +14,14 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <div>
-      <b-nav-bar toggleable="lg" type="dark" variant="info">
-      <b-navbar-brand>   
-        <b-img left src="../../public/vealoLogo" alt="logo"></b-img>
-      </b-navbar-brand>
+    <>
+      <nav class="navbar bg-body-tertiary" type="dark" variant="info">
+          <div class="container-fluid">
+            <a class="navbar-brand">
+              <img src="../public/vealoLogo" alt="Logo" class="d-inline-block align-text-top"/>
+            </a>
+          </div>
+     
         <Link to="/categories">Streaming Sources</Link>
         &nbsp; | &nbsp;
         <Link to="/trending">Trending</Link>
@@ -27,39 +31,9 @@ export default function NavBar({ user, setUser }) {
         <Link to="/watchlist">Watchlist</Link>
         <Nav.Link href="/watchlist">My Comments</Nav.Link>
         &nbsp;&nbsp;
-        <span>Vealo 👍 {user.name} or 👎 No </span>
+        <span>Vealo 👍  👎   {user.name}  </span>
         &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-      </b-nav-bar>
-    </div>
-  );
+     </nav>
+    </>
+  )
 }
-
-// function BasicExample() {
-  // return (
-  //   <Navbar bg="dark" expand="lg" variant='dark'>
-  //     <Container>
-  //       <Navbar.Brand href="#home">Vealo 👍 👎 </Navbar.Brand>
-  //       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  //       <Navbar.Collapse id="basic-navbar-nav">
-  //         <Nav className="me-auto">
-  //           <Nav.Link href="#home">Home</Nav.Link>
-  //           <Nav.Link href="#link">Link</Nav.Link>
-  //           <NavDropdown title="Categories" id="basic-nav-dropdown">
-  //             <NavDropdown.Item href="#action/3.1">Movies</NavDropdown.Item>
-  //             <NavDropdown.Item href="#action/3.2">
-  //               Shows
-  //             </NavDropdown.Item>
-  //             <NavDropdown.Item href="#action/3.3">Networks</NavDropdown.Item>
-  //             <NavDropdown.Divider />
-  //             <NavDropdown.Item href="#action/3.4">
-  //               See what others say.
-  //             </NavDropdown.Item>
-  //           </NavDropdown>
-  //         </Nav>
-  //       </Navbar.Collapse>
-  //     </Container>
-  //   </Navbar>
-  // );
-// }
-
-// export default BasicExample;
