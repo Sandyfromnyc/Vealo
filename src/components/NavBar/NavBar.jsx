@@ -14,7 +14,10 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <div>
-      <nav>
+      <b-nav-bar toggleable="lg" type="dark" variant="info">
+      <b-navbar-brand>   
+        <b-img left src="../../public/vealoLogo" alt="logo"></b-img>
+      </b-navbar-brand>
         <Link to="/categories">Streaming Sources</Link>
         &nbsp; | &nbsp;
         <Link to="/trending">Trending</Link>
@@ -26,7 +29,7 @@ export default function NavBar({ user, setUser }) {
         &nbsp;&nbsp;
         <span>Vealo 👍 {user.name} or 👎 No </span>
         &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-      </nav>
+      </b-nav-bar>
     </div>
   );
 }
