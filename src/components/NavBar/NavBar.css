@@ -1,3 +1,9 @@
-.nav-bar {
-  
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand>img  {
+  float: left !important;
+  margin-top: -15px !important;
 }

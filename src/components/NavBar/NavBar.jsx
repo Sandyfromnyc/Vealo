@@ -15,25 +15,31 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <>
-      <nav class="navbar bg-body-tertiary" type="dark" variant="info">
-          <div class="container-fluid">
-            <a class="navbar-brand">
-              <img src="../public/vealoLogo" alt="Logo" class="d-inline-block align-text-top"/>
-            </a>
-          </div>
+      <Navbar bg="light">
+          <Container>
+            <Navbar.Brand>
+              <img 
+              src="../../public/vealoLogo" 
+              width="50"
+              height="50"
+              className="d-inline-block align-center"
+              alt="" />
+            </Navbar.Brand>
      
-        <Link to="/categories">Streaming Sources</Link>
-        &nbsp; | &nbsp;
-        <Link to="/trending">Trending</Link>
-        &nbsp; | &nbsp;
-        <Link to="/search">Search Titles</Link>
-        &nbsp; | &nbsp;
-        <Link to="/watchlist">Watchlist</Link>
-        <Nav.Link href="/watchlist">My Comments</Nav.Link>
-        &nbsp;&nbsp;
-        <span>Vealo 👍  👎   {user.name}  </span>
-        &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
-     </nav>
+              <Link to="/categories" bg="light" >Streaming Sources</Link>
+             
+              <Link to="/trending">Trending</Link>
+              
+              <Link to="/search">Search Titles</Link>
+              
+              <Link to="/watchlist">Watchlist</Link>
+              <Link to="/watchlist">My Comments</Link>
+              
+              <span>Vealo 👍  👎   {user.name}  </span>
+            
+              <Link to="" onClick={handleLogOut}>Log Out</Link>
+          </Container >
+      </Navbar>
     </>
   )
 }
