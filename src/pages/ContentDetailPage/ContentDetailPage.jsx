@@ -55,7 +55,7 @@ useEffect(function() {
         <li>{contentDetails.plot_overview}</li>
           </ul>
             <iframe width="420" height="315"
-              src='https://www.youtube.com/embed/1Q8fG0TtVAY'>
+              src={contentDetails.trailer} allowFullScreen>
             </iframe>
         </div>
         </div>

@@ -44,6 +44,7 @@ async function show(req, res) {
     let content = await Content.findOne({id: req.params.id}).populate('comments.user', 'name')
     if (!content) {
         content = await fetch(`${BASE_URL}/title/${req.params.id}/details/?apiKey=${API_KEY}`).then((response) => response.json())
+        const videoId = content.trailer.match(/v=([^&]+)/)[1]
     const newContent = {
         title: content.title,
         type: content.type,
@@ -54,7 +55,7 @@ async function show(req, res) {
         user_rating: content.user_rating,
         us_rating: content.us_rating,
         plot_overview: content.plot_overview,
-        trailer: content.trailer,
+        trailer: `https://www.youtube.com/embed/${videoId}`,
     };
         content = await Content.create(newContent);
         
