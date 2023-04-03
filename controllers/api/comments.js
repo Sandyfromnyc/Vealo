@@ -4,7 +4,6 @@ const User = require('../../models/user');
 module.exports = {
   createComment,
   deleteComment,
-  editComment,
   updateComment
 }
 
@@ -29,11 +28,11 @@ async function deleteComment(req, res) {
   res.json(content)
 }
 
-async function editComment(req, res) {
-  const content = await Content.findOne({'comments._id': req.params.id, 'comments.user' : req.user._id});
-  const comment = content.comments.id(req.params.id);
-  res.json('comments/edit', { comment });
-}
+// async function editComment(req, res) {
+//   const content = await Content.findOne({'comments._id': req.params.id, 'comments.user' : req.user._id});
+//   const comment = content.comments.id(req.params.id);
+//   res.json('comments/edit', { comment });
+// }
 
 
 async function updateComment(req, res) {

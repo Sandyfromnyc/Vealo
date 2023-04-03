@@ -3,7 +3,8 @@ import * as userService from '../../utilities/users-service';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
+
 
 
 
@@ -19,9 +20,9 @@ export default function NavBar({ user, setUser }) {
           <Container>
             <Navbar.Brand>
               <img 
-              src="../../public/vealoLogo" 
-              width="50"
-              height="50"
+              src={require('./vealoLogo.png')}
+              width="100"
+              height="40"
               className="d-inline-block align-center"
               alt="" />
             </Navbar.Brand>

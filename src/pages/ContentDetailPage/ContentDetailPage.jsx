@@ -22,6 +22,11 @@ async function handleDeleteComment(id) {
   setContentDetails(updatedContent)
 }
 
+async function handleUpdateComment(updateCommentItem, commentId) {
+  const updateContentComment = commentsAPI.updateComment(updateCommentItem,commentId)
+  setContentDetails(updateContentComment)
+}
+
 useEffect(function() {
   async function getContentDetails() {
     const allContentDetails = await contentAPI.getContentDetails(id)
@@ -57,7 +62,13 @@ useEffect(function() {
         
 
       <CommentForm handleAddComment={handleAddComment}  /> 
-      <CommentCard handleDeleteComment={handleDeleteComment} comments={contentDetails.comments} user={user} />
+      <CommentCard 
+        handleDeleteComment={handleDeleteComment}
+        handleUpdateComment={handleUpdateComment} 
+        comments={contentDetails.comments} 
+        user={user} 
+      />
+   
     </>
 
   );
