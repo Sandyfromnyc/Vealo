@@ -12,7 +12,7 @@ export default function EditCommentForm({handleUpdateComment, commentId}) {
   }
 
   function handleInputChange(evt) {
-    setUpdateCommentItem(evt.targe.value);
+    setUpdateCommentItem(evt.target.value);
   }
 
 
