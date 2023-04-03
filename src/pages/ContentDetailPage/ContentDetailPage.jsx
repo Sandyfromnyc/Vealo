@@ -4,8 +4,6 @@ import  * as contentAPI from '../../utilities/contents-api';
 import * as commentsAPI from '../../utilities/comments-api';
 import CommentForm from "../../components/CommentForm/CommentForm";
 import CommentCard from "../../components/CommentCard/CommentCard";
-import AuthPage from "../AuthPage/AuthPage";
-
 
 
 export default function ContentDetailPage({user}) {
@@ -56,7 +54,9 @@ useEffect(function() {
         <img src={contentDetails.poster} alt={contentDetails.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} />   </li>
         <li>{contentDetails.plot_overview}</li>
           </ul>
-
+            <iframe width="420" height="315"
+              src='https://www.youtube.com/embed/1Q8fG0TtVAY'>
+            </iframe>
         </div>
         </div>
         

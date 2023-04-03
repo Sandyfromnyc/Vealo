@@ -55,7 +55,11 @@ const contentSchema = new Schema({
   },
   
   plot_overview: {
-    type: String
+    type: String,
+  },
+
+  trailer: {
+    type: String,
   },
 
 

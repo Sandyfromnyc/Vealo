@@ -53,7 +53,8 @@ async function show(req, res) {
         genre_names: content.genre_names,
         user_rating: content.user_rating,
         us_rating: content.us_rating,
-        plot_overview: content.plot_overview
+        plot_overview: content.plot_overview,
+        trailer: content.trailer,
     };
         content = await Content.create(newContent);
         
