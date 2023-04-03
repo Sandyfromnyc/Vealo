@@ -9,7 +9,7 @@ handleUpdateComment}) {
 
  const commentsMap = comments.map((comment, idx,) => (
         <>
-          <div>
+          <div className='card-body'>
             <div className="commentUser" style={{display: 'block', position: 'initial'}}>
               <p className="userName">Name: {comment.user.name}</p>
             </div>

@@ -24,20 +24,15 @@ async function handleDetail(id) {
 const trendingMap = trending.map((trendingitem, idx) => (
   <div key={idx}>
   
-    <div section>
-      <div>
-        <ul>
-          <li>
-
-            {trendingitem.title}
-            {trendingitem.year}
-            {trendingitem.type}
-          </li>
-          <li>
+    <div className='card'>
           <img src={trendingitem.image_url} alt={trendingitem.name} poster/>  
-          </li>
+      <div className='details'>
+           <h2 className='title'> {trendingitem.title} </h2>
+           <p className='description'>{trendingitem.year}</p> 
+            <p className="description">{trendingitem.type} </p>
+           
             <button onClick={() => handleDetail(trendingitem.id)}>Get Details </button>
-        </ul>
+      
       </div>
     </div>
 
@@ -46,6 +41,7 @@ const trendingMap = trending.map((trendingitem, idx) => (
 
   return (
     <>
+
   <h1> See What's trending</h1>
      <ul>
       <li>

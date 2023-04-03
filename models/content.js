@@ -18,6 +18,10 @@ const commentsSchema = new Schema({
     ref: 'User',
     required: true
   },
+  thumbsUp: {
+    type: Boolean,
+  },
+  
 });
 
 

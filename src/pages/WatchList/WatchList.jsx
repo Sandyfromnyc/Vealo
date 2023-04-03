@@ -10,7 +10,7 @@ export default function WatchList() {
       <h1>Watch List</h1>
 
       
-      <button onClick={handleCheckToken}>Do I need this button?</button>
+      <button onClick={handleCheckToken}>Remove</button>
     </>
   );
 }

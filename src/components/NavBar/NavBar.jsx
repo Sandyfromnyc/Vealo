@@ -18,7 +18,7 @@ export default function NavBar({ user, setUser }) {
     <>
       <Navbar bg="light">
           <Container>
-            <Navbar.Brand>
+            <Navbar.Brand href='/'>
               <img 
               src={require('./vealoLogo.png')}
               width="100"
@@ -34,7 +34,7 @@ export default function NavBar({ user, setUser }) {
               <Link to="/search">Search Titles</Link>
               
               <Link to="/watchlist">Watchlist</Link>
-              <Link to="/watchlist">My Comments</Link>
+            
               
               <span>Vealo 👍  👎   {user.name}  </span>
             

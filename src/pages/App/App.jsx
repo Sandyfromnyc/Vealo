@@ -35,3 +35,7 @@ export default function App() {
     </main>
   );
 }
+
+<div>
+  <h1>Welcome to Vealo!</h1>
+</div>

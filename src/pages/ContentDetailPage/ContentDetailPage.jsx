@@ -4,7 +4,7 @@ import  * as contentAPI from '../../utilities/contents-api';
 import * as commentsAPI from '../../utilities/comments-api';
 import CommentForm from "../../components/CommentForm/CommentForm";
 import CommentCard from "../../components/CommentCard/CommentCard";
-
+import './ContentDetailPage.css';
 
 export default function ContentDetailPage({user}) {
    const [contentDetails, setContentDetails] = useState(null);
@@ -36,29 +36,32 @@ useEffect(function() {
 }, [id]);
  
   if (!contentDetails) return null
-
+    console.log(contentDetails.comment)
   return (
     <>
+    <div className="card">
+      <div className="card-header">
       <h1>Details</h1>
-      <div className="contentDetails" section>
-      <div>
-      <ul>
-        <li> Title:  {contentDetails.title} </li>
-        <li> Type: {contentDetails.type} </li>
-        <li> ID: {contentDetails.id} </li>
-        <li> Year: {contentDetails.year} </li>
-        <li> Genre: {contentDetails.genre_names} </li>
-        <li> User Rating: {contentDetails.user_rating} </li>
-        <li> US Rating: {contentDetails.us_rating} </li>
-        <li> 
-        <img src={contentDetails.poster} alt={contentDetails.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} />   </li>
-        <li>{contentDetails.plot_overview}</li>
-          </ul>
-            <iframe width="420" height="315"
-              src={contentDetails.trailer} allowFullScreen>
-            </iframe>
+      </div>
+      <div className="card-body">
+        <div className="container">
+          <img src={contentDetails.poster} alt={contentDetails.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} className="poster" />   
+        <div className="info">
+          <h2 className="title"> {contentDetails.title} </h2>
+          <p className="info"> {contentDetails.type} </p>
+          {/* <p> ID: {contentDetails.id} </p> */}
+          <p className="info">  {contentDetails.year} </p>
+          <p className="info"> {contentDetails.genre_names} </p>
+          <p className="info"> User Rating: {contentDetails.user_rating} </p>
+          <p> US Rating: {contentDetails.us_rating} </p>
+          <p className="plot">{contentDetails.plot_overview}</p>
+              <iframe width="420" height="315"
+                src={contentDetails.trailer} allowFullScreen>
+              </iframe>
+          </div>
         </div>
-        </div>
+      </div>
+    </div>
         
 
       <CommentForm handleAddComment={handleAddComment}  /> 
