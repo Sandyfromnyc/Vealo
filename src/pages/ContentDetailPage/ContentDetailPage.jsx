@@ -22,8 +22,8 @@ async function handleDeleteComment(id) {
   setContentDetails(updatedContent)
 }
 
-async function handleUpdateComment(updateCommentItem, commentId) {
-  const updateContentComment = await commentsAPI.updateComment(updateCommentItem,commentId)
+async function handleUpdateComment(commentId, updateCommentItem) {
+  const updateContentComment = await commentsAPI.updateComment(commentId, updateCommentItem)
   setContentDetails(updateContentComment)
 }
 

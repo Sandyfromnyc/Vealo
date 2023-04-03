@@ -20,10 +20,11 @@ handleUpdateComment}) {
               <>
                 <button onClick={() => handleDeleteComment(comment._id)}> Delete </button>
 
-                <button onClick={() => setShowEdit(!showEdit)}>
-                  {showEdit ? "Cancel" : "Edit"}
-                  <EditCommentForm />
-                </button>
+                <button onClick={() => setShowEdit(!showEdit)}>Edit comment</button>
+                  {showEdit && (
+                    <EditCommentForm handleUpdateComment={handleUpdateComment}  commentId={comment._id}/>
+
+                  )}
               </>          
               :
               null 

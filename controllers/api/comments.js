@@ -36,7 +36,7 @@ async function deleteComment(req, res) {
 
 
 async function updateComment(req, res) {
-  const content = await Content.findByIdandUpdate({'comments._id' : req.params.id, 'comments.user' : req.user._id});
+  const content = await Content.findByIdAndUpdate({'comments._id' : req.params.id, 'comments.user' : req.user._id});
   const commentId = Content.comments.id(req.params.id);
   if (!commentId.userId.equals(req.user._id)) {
     return res.status(401).json({message: "error"})  

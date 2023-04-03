@@ -16,7 +16,7 @@ export async function deleteComment(id) {
 //   return editCommentRequest
 // }
 
-export async function updateComment(commentData, id) {
+export async function updateComment(id, commentData) {
   const updateCommentRequest = await sendRequest(`/api/comments/${id}`, 'PUT', commentData)
   return updateCommentRequest
 }
