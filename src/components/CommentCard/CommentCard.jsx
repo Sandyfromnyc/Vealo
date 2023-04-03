@@ -1,5 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 import { useState } from "react";
+import EditCommentForm from '../EditCommentForm/EditCommentForm';
 
 
 export default function CommentCard({comments, user, handleDeleteComment, 
@@ -21,6 +22,7 @@ handleUpdateComment}) {
 
                 <button onClick={() => setShowEdit(!showEdit)}>
                   {showEdit ? "Cancel" : "Edit"}
+                  <EditCommentForm />
                 </button>
               </>          
               :

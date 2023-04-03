@@ -11,5 +11,16 @@ export default function EditCommentForm({handleUpdateComment, commentId}) {
     handleUpdateComment(updateCommentItem, commentId)
   }
 
+  function handleInputChange(evt) {
+    setUpdateCommentItem(evt.targe.value);
+  }
 
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="comment">Edit Comment</label>
+      <input type="text" id="comment" value={updateCommentItem} onChange={handleInputChange} />
+      <button type="submit">Update Comment</button>
+    </form>
+  );
 }
