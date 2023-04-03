@@ -36,13 +36,15 @@ async function deleteComment(req, res) {
 
 
 async function updateComment(req, res) {
-  const content = await Content.findByIdAndUpdate({'comments._id' : req.params.id, 'comments.user' : req.user._id});
-  const commentId = Content.comments.id(req.params.id);
-  if (!commentId.userId.equals(req.user._id)) {
+  const content = await Content.findOne({'comments._id' : req.params.id, 'comments.user' : req.user._id});
+  const commentId = content.comments.id(req.params.id);
+  commentId.content = req.body.content
+  commentId.rating = req.body.rating
+ 
+  if (!commentId.user.equals(req.user._id)) {
     return res.status(401).json({message: "error"})  
 
   }
-  commentId.text = req.body.text
   try {
     await content.save();
   } catch (e) {
