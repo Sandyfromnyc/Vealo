@@ -32,6 +32,12 @@ export default function App() {
           :
           <AuthPage setUser={setUser} element={AuthPage} />
       }
+
+        <div className="container">
+          <h1 className='centered-text'>What have you seen?</h1>
+          <h1>Tell us if you think it worth watching or not.</h1>
+        </div>
+        
     </main>
   );
 }

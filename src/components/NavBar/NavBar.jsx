@@ -36,7 +36,7 @@ export default function NavBar({ user, setUser }) {
               <Link to="/watchlist">Watchlist</Link>
             
               
-              <span>Vealo 👍  👎   {user.name}  </span>
+              <span><strong> 👍   {user.name}    👎  </strong></span>
             
               <Link to="" onClick={handleLogOut}>Log Out</Link>
           </Container >
