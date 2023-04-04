@@ -24,7 +24,7 @@ async function handleDetail(id) {
 const trendingMap = trending.map((trendingitem, idx) => (
   <div key={idx}>
   
-    <div className='card'>
+    <div className='card m-3 p-3'>
           <img src={trendingitem.image_url} alt={trendingitem.name} poster/>  
       <div className='details'>
            <h2 className='title'> {trendingitem.title} </h2>

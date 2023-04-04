@@ -4,7 +4,7 @@ import  * as contentAPI from '../../utilities/contents-api';
 import * as commentsAPI from '../../utilities/comments-api';
 import CommentForm from "../../components/CommentForm/CommentForm";
 import CommentCard from "../../components/CommentCard/CommentCard";
-import './ContentDetailPage.css';
+
 
 export default function ContentDetailPage({user}) {
    const [contentDetails, setContentDetails] = useState(null);
@@ -39,7 +39,7 @@ useEffect(function() {
     console.log(contentDetails.comment)
   return (
     <>
-    <div className="card">
+    <div className="card p-3">
       <div className="card-header">
       <h1>Details</h1>
       </div>
@@ -54,7 +54,7 @@ useEffect(function() {
           <p className="info"> {contentDetails.genre_names} </p>
           <p className="info"> User Rating: {contentDetails.user_rating} </p>
           <p> US Rating: {contentDetails.us_rating} </p>
-          <p className="plot">{contentDetails.plot_overview}</p>
+          <p className="plot" >{contentDetails.plot_overview}</p>
               <iframe width="420" height="315"
                 src={contentDetails.trailer} allowFullScreen>
               </iframe>

@@ -30,12 +30,9 @@ export default function App() {
             </Routes>
           </>
           :
-          <AuthPage setUser={setUser} />
+          <AuthPage setUser={setUser} element={AuthPage} />
       }
     </main>
   );
 }
 
-<div>
-  <h1>Welcome to Vealo!</h1>
-</div>
