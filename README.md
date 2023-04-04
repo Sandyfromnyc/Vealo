@@ -65,8 +65,7 @@
 
 ## :satellite: Upcoming Features
 
-- [:star:] Add the thumbsUp and thumbsDown feature 
-
+- [:x:] Add the thumbsUp and thumbsDown feature 
 - [:x:] Watchlist feature 
 - [:x:] add links to sources
 
