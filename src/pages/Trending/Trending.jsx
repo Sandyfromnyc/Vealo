@@ -43,11 +43,9 @@ const trendingMap = trending.map((trendingitem, idx) => (
     <>
 
   <h1> See What's trending</h1>
-     <ul>
-      <li>
+  
         {trendingMap}
-      </li>
-     </ul>
+    
     </>
   )
 }
