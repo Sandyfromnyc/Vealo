@@ -27,7 +27,6 @@
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
-  | <h3 align="center">wireframe</h3> | <img src="https://i.imgur.com/TSBvfbf.png" width="700"/>
   | <h3>Landing Page</h3> | <img src="https://i.imgur.com/PL6R2ub.png" width="700"/>
   | <h3 align="center">Sources</h3> | <img src="https://i.imgur.com/5rPZqix.png" width="700"/>
   | <h3 align="center">Search page</h3> | <img src="https://i.imgur.com/9YllY2G.png" width="700"/>
