@@ -30,13 +30,13 @@ export default function CommentForm({handleAddComment}) {
             </label>
             <textarea 
             name='content' 
-            placeholder='Add a comment'
+            placeholder='Have you seen this one?  Tell us what you think!'
             value={newComment.content} 
             onChange={handleChange}
             className="form-control"
             required
             />
-            <label htmlFor="rating">Rating</label>
+            <label htmlFor="rating">What do you Rate it?</label>
               <select name="rating" value={newComment.rating} onChange={handleChange} className="form-control">
                   <option value={1}>1</option>
                   <option value={2}>2</option>
@@ -49,7 +49,7 @@ export default function CommentForm({handleAddComment}) {
                   <option value={9}>9</option>
                   <option value={10}>10</option>
               </select>
-            <button type="submit">Add a comment</button>
+            <button type="submit" className="btn btn-warning">Add a comment</button>
           </form>
 
         </div>

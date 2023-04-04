@@ -43,7 +43,7 @@ useEffect(function() {
       <div className="card-header">
       <h1>Details</h1>
       </div>
-      <div className="card-body">
+      <div className="card-body bg-secondary">
         <div className="container">
           <img src={contentDetails.poster} alt={contentDetails.title} style={{ width: '280px', height: '500px', objectFit: 'contain'  }} className="poster" />   
         <div className="info">
@@ -54,7 +54,7 @@ useEffect(function() {
           <p className="info"> {contentDetails.genre_names} </p>
           <p className="info"> User Rating: {contentDetails.user_rating} </p>
           <p> US Rating: {contentDetails.us_rating} </p>
-          <p className="plot" >{contentDetails.plot_overview}</p>
+          <p className="plot" ><strong>{contentDetails.plot_overview}</strong></p>
               <iframe width="420" height="315"
                 src={contentDetails.trailer} allowFullScreen>
               </iframe>

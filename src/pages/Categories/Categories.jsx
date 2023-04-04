@@ -30,16 +30,16 @@ useEffect(function() {
    
     <h1>Streaming Sources</h1>
 
-    <div className="movie">
-        <ul>
-          <li> All of it here! </li>
-        </ul>
+    <div className="card bg-info" >
+        
+          <h1> All of it here! </h1>
+       
     </div>
 
-    <div className="shows"> 
-      <ul>
-        <li>{AllSources}</li>
-      </ul>
+    <div> 
+      
+       <div>{AllSources}</div>
+     
     </div>
    </>
   );
