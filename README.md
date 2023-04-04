@@ -30,7 +30,7 @@
   | <h3 align="center">wireframe</h3> | <img src="https://i.imgur.com/TSBvfbf.png" width="700"/>
   | <h3>Landing Page</h3> | <img src="https://i.imgur.com/PL6R2ub.png" width="700"/>
   | <h3 align="center">Sources</h3> | <img src="https://i.imgur.com/5rPZqix.png" width="700"/>
-  | <h3 align="center">Search page</h3> | <img src="https://i.imgur.com/y2Xoi5m.png" width="700"/>
+  | <h3 align="center">Search page</h3> | <img src="https://i.imgur.com/9YllY2G.png" width="700"/>
   | <h3 align="center">Search Results</h3> | <img src="https://i.imgur.com/y2Xoi5m.png" width="700"/>
   | <h3 align="center">Trending</h3> | <img src="https://i.imgur.com/OopqwFv.png" width="700"/>
   | <h3 align="center">Content Details</h3> | <img src="https://i.imgur.com/NZMWmL5.png" width="700"/>
